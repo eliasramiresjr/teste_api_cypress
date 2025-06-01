@@ -1,10 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('API test', () => {
-
-  beforeEach('Go to home page', () => {
-    cy.visit('/')
-  })
+describe('API login test', () => {
 
   it('Should login in page', () => {
     cy.api_login('fulano@qa.com', 'teste').then((response) => {
@@ -13,11 +9,10 @@ describe('API test', () => {
     })
   })
 
-  it.only('Should validate incorrect password', () => {
+  it('Should validate incorrect password', () => {
     cy.api_login('fulano@qa.com', 'SenhaIncorreta').then((response) => {
       expect(response.status).to.equal(401)
       expect(response.body.message).to.equal('Email e/ou senha inválidos')
     })
   })
-
 })
