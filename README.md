@@ -1,6 +1,10 @@
 ## 🧪 Cypress API Test Project – Serverest
 Este projeto utiliza o Cypress para realizar testes automatizados na API do Serverest — uma API simulada voltada para estudos de automação de testes de serviços REST.
 
+![Texto alternativo](README/api_carrinhos.png)
+![Texto alternativo](README/api_produtos.png)
+![Texto alternativo](README/api_usuarios.png)
+
 ## 🚀 Tecnologias Utilizadas
 - Cypress – Framework de testes end-to-end
 
@@ -10,6 +14,10 @@ Este projeto utiliza o Cypress para realizar testes automatizados na API do Serv
 
 - Serverest – API falsa utilizada para fins educacionais
 
+- Faker - Para simular a entrada de inputs
+
+- CI - Projeto integrado ao GitHub actions
+
 ## 🛠️ Pré-requisitos
 - Node.js
 
@@ -18,6 +26,8 @@ Este projeto utiliza o Cypress para realizar testes automatizados na API do Serv
 - Cypress
 
 - Cypress-plugin-api
+
+- Faker
 
 ## 📌 Testes Implementados
 - Usuários
@@ -38,7 +48,7 @@ Este projeto utiliza o Cypress para realizar testes automatizados na API do Serv
 
 - Listagem de produtos
 
-- Cadastro, edição e exclusão de produto
+<!-- - Cadastro, edição e exclusão de produto -->
 
 - Carrinho
 
@@ -46,7 +56,7 @@ Este projeto utiliza o Cypress para realizar testes automatizados na API do Serv
 
 - Finalizar compra
 
-- Cancelar compra
+<!-- - Cancelar compra -->
 
 ## 📚 Boas Práticas Adotadas
 - Uso de Cypress.Commands para reutilizar ações comuns (ex: login)
