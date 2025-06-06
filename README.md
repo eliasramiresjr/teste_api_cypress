@@ -18,16 +18,20 @@ Este projeto utiliza o Cypress para realizar testes automatizados na API do Serv
 
 - CI - Projeto integrado ao GitHub actions
 
-## 🛠️ Pré-requisitos
-- Node.js
+## 🛠️  Instalação e Uso
+1. Clone o repositório:
+- git clone https://github.com/eliasramiresjr/teste_api_cypress.git
 
-- NPM
+- cd nome-do-repositorio
 
-- Cypress
+2. Instale as dependências:
+- npm install
 
-- Cypress-plugin-api
+3. Execute os testes (interface):
+- npx cypress open
 
-- Faker
+4. Rodar os testes em modo headless (terminal):
+- npx cypress run
 
 ## 📌 Testes Implementados
 - Usuários
