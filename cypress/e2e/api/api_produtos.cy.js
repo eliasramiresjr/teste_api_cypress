@@ -7,7 +7,7 @@ let token
 describe('API produtos test', () => {
 
     it('Should login', () => {
-        cy.api_login('fulano@qa.com', 'teste').then((response) => {
+        cy.api_login('oioioji2@qa.com.br', 'nova-senha').then((response) => {
             token = response.body.authorization
         })
     })

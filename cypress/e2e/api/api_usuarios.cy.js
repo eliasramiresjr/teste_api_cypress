@@ -15,7 +15,7 @@ describe('API users test', () => {
   })
 
   it('Should login in page', () => {
-    cy.api_login('fulano@qa.com', 'teste').then((response) => {
+    cy.api_login('oioioji2@qa.com.br', 'nova-senha').then((response) => {
       expect(response.status).to.equal(200)
       expect(response.body.message).to.equal('Login realizado com sucesso')
     })
