@@ -1,9 +1,10 @@
 import { faker } from "@faker-js/faker"
+import { randomAlphaNumeric, randomEmail, randomPassword, randomUser } from "../../support/utils"
 
-const randomUser = faker.person.fullName()
-const randomPassword = faker.internet.password()
-const randomEmail = faker.internet.email()
-const randomAlphanumeric = faker.string.alphanumeric(16)
+// const randomUser = faker.person.fullName()
+// const randomPassword = faker.internet.password()
+// const randomEmail = faker.internet.email()
+// const randomAlphanumeric = faker.string.alphanumeric(16)
 
 describe('API users test', () => {
 
@@ -15,7 +16,7 @@ describe('API users test', () => {
   })
 
   it('Should login in page', () => {
-    cy.api_login('oioioji2@qa.com.br', 'nova-senha').then((response) => {
+    cy.api_login('fulano@qa.com', 'teste').then((response) => {
       expect(response.status).to.equal(200)
       expect(response.body.message).to.equal('Login realizado com sucesso')
     })
@@ -35,9 +36,9 @@ describe('API users test', () => {
       method: 'POST',
       url: 'usuarios',
       body: {
-        "nome": randomUser,
-        "email": randomEmail,
-        "password": randomPassword,
+        "nome": randomUser(),
+        "email": randomEmail(),
+        "password": randomPassword(),
         "administrador": "true"
       }
     }).then((response) => {
@@ -51,9 +52,9 @@ describe('API users test', () => {
       method: 'POST',
       url: 'usuarios',
       body: {
-        "nome": randomUser,
+        "nome": randomUser(),
         "email": 'beltrano@qa.com.br',
-        "password": randomPassword,
+        "password": randomPassword(),
         "administrador": "true"
       },
       failOnStatusCode: false
@@ -75,7 +76,7 @@ describe('API users test', () => {
   it('Try find a user by id', () => {
     cy.request({
       method: 'GET',
-      url: `usuarios/${randomAlphanumeric}`,
+      url: `usuarios/${randomAlphaNumeric()}`,
       failOnStatusCode: false
     }).then((response) => {
       expect(response.body.message).to.equal('Usuário não encontrado')

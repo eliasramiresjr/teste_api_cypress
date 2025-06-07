@@ -1,13 +1,11 @@
-import { faker } from "@faker-js/faker";
-
-const randomProduct = faker.word.words()
+import { randomProduct } from "../../support/utils";
 
 let token
 
 describe('API produtos test', () => {
 
     it('Should login', () => {
-        cy.api_login('oioioji2@qa.com.br', 'nova-senha').then((response) => {
+        cy.api_login('fulano@qa.com', 'teste').then((response) => {
             token = response.body.authorization
         })
     })
@@ -27,7 +25,7 @@ describe('API produtos test', () => {
                 authorization: token
             },
             body: {
-                "nome": randomProduct,
+                "nome": randomProduct(),
                 "preco": 470,
                 "descricao": "descrição do carro",
                 "quantidade": 5

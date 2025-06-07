@@ -1,14 +1,11 @@
-import { faker } from "@faker-js/faker";
-
-const randomProduct = faker.word.words()
-const randomAlphanumeric = faker.string.alphanumeric(16)
+import { randomAlphaNumeric, randomProduct } from "../../support/utils";
 
 let token
 
 describe('API test cart', () => {
 
     it('Should login in page', () => {
-        cy.api_login('oioioji2@qa.com.br', 'nova-senha').then((response) => {
+        cy.api_login('fulano@qa.com', 'teste').then((response) => {
             token = response.body.authorization
         })
     })
@@ -92,7 +89,7 @@ describe('API test cart', () => {
     it('Try find a cart using invalid ID', () => {
         cy.request({
             method: 'GET',
-            url: `carrinhos/${randomAlphanumeric}`,
+            url: `carrinhos/${randomAlphaNumeric()}`,
             failOnStatusCode: false
         }).then((response) => {
             expect(response.body.message).to.equal('Carrinho não encontrado')
