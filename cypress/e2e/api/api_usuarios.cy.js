@@ -1,10 +1,4 @@
-import { faker } from "@faker-js/faker"
 import { randomAlphaNumeric, randomEmail, randomPassword, randomUser } from "../../support/utils"
-
-// const randomUser = faker.person.fullName()
-// const randomPassword = faker.internet.password()
-// const randomEmail = faker.internet.email()
-// const randomAlphanumeric = faker.string.alphanumeric(16)
 
 describe('API users test', () => {
 
